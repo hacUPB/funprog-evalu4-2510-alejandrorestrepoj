@@ -49,3 +49,13 @@ a = Se abre un archivo para agregar nuevos datos al final. Si el archivo no exis
 r+ = Se abre un archivo para realizar modificaciones. Permite leer y escribir. El archivo tiene que existir
 w+ = Se abre un archivo para leer y escribir. Si el archivo existe, el apuntador se coloca al inicio, sobreescribe y destruye el archivo anterior
 a+ = Se abre un nuevo archivo para lectura y para incorporar nuevos datos al final. Si el archivo no existe, se crea uno nuevo.
+
+### Funcion fprintf()
+
+Funciona igual que printf en cuanto a parametros, pero la salida se dirige a un archivo en lugar de a la pantalla
+
+El prototipo correspondiente de fprintf es:
+
+```
+int fprintf(File *archivo, const char *formato, argumento, ...);
+```
