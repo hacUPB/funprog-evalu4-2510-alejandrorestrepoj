@@ -8,7 +8,6 @@ int main(int argc, char const *angv[])
     {
         prinf("Se crea el archivo. \n");
     }
-
     fclose(p_archivo);
     return 0;
 }

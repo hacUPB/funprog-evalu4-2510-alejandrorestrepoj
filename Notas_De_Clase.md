@@ -59,3 +59,13 @@ El prototipo correspondiente de fprintf es:
 ```
 int fprintf(File *archivo, const char *formato, argumento, ...);
 ```
+
+### Funcion fscanf()
+
+Funciona igual que scanf en cuanto a parametros, pero la entrada se toma de un fichero en lugar del teclado.
+
+El prototipo correspondiente de fscanf es:
+
+```
+int fscanf(FILE *fichero, const char *formato, argumento, ...)
+```
