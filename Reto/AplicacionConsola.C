@@ -71,7 +71,8 @@ int nombre_arch(void)
     size_t totalSize = 0;
 
     printf("Ingrese el nombre del archivo .txt: ");
-    scanf("%255s", filename);
+    fgets(filename, sizeof(filename), stdin);
+    filename[strcspn(filename, "\n")] = '\0';
 
     file = fopen(filename, "r");
     if (!file) {
@@ -100,3 +101,55 @@ int nombre_arch(void)
     return 0;
 }
 
+int estad_txt(void)
+{
+    int content[256];
+    if (content == NULL) {
+        printf("No se ha cargado ningún archivo.\n");
+        return 1;
+    }
+
+    int num_chars = 0;  
+    int num_words = 0;  
+    int num_spaces = 0; 
+    int num_lines = 0;  
+    int in_word = 0;
+
+    for (size_t i = 0; i < totalSize; i++)
+    {
+        if (content[i] != '\n')
+        {
+            num_chars++;
+        }
+        if (content[i] == ' ') {
+            num_spaces++;
+        }
+        if (isspace(content[i]) || content[i] == '\n')
+        {
+            if (in_word) {
+                num_words++;
+                in_word = 0;
+            }
+        }
+        else
+        {
+            in_word = 1;
+        }
+        if (content[i] == '\n')
+        {
+            num_lines++;
+        }
+    }
+    if (in_word)
+    {
+        num_words++;
+    }
+
+    printf("\nEstadísticas del archivo:\n");
+    printf("Total de caracteres (sin contar saltos de línea): %d\n", num_chars);
+    printf("Total de palabras: %d\n", num_words);
+    printf("Total de espacios en blanco: %d\n", num_spaces);
+    printf("Total de líneas: %d\n", num_lines);
+
+    return 0;
+}
