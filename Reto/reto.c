@@ -5,13 +5,11 @@
 
 #define BUFFER_SIZE 1024
 
-// Variables globales
 char *content = NULL;
 size_t totalSize = 0;
 int num_chars = 0, num_words = 0, num_spaces = 0, num_lines = 0;
 int freq[5] = {0}; // a, e, i, o, u
 
-// Declaraciones
 int menu(void);
 int nombre_arch(void);
 int estad_txt(void);
@@ -34,7 +32,7 @@ int main(void)
         }
     } while (opc >= 1 && opc <= 5);
 
-    free(content); // Liberar memoria al final
+    free(content); 
     return 0;
 }
 
