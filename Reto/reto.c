@@ -140,7 +140,8 @@ int frecu_vocal(void)
 
     for (size_t i = 0; i < totalSize; i++) {
         char c = tolower((unsigned char)content[i]);
-        switch (c) {
+        switch (c)
+        {
             case 'a': freq[0]++; break;
             case 'e': freq[1]++; break;
             case 'i': freq[2]++; break;
