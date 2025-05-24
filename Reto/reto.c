@@ -85,7 +85,7 @@ int nombre_arch(void)
             return 1;
         }
         content = temp;
-        memcpy(content + totalSize, buffer, len);
+        strcpy(content + totalSize, buffer, len);
         totalSize += len;
         content[totalSize] = '\0';
     }
